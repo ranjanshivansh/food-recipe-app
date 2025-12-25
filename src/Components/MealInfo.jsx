@@ -9,7 +9,7 @@ const MealInfo = () => {
     const getDetails=async(mealid)=>{
         try{
         setLoading(true);
-        const data=await fetch("https://www.themealdb.com/api/json/v1/1/lookup.php?i=52772");
+        const data=await fetch(`https://www.themealdb.com/api/json/v1/1/lookup.php?i=${mealid}`);
         const response=await data.json();
         setDetails(response.meals[0]);
         }catch(err){
